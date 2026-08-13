@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Hunzila Nisar</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Project Detail Specific Styles */
+        body {
+            background-color: var(--bg-base);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 1000;
+            background: rgba(20, 0, 0, 0.7);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(195, 17, 12, 0.4);
+        }
+
+        /* Hero Section */
+        .project-hero {
+            position: relative;
+            height: 70vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 80px 5%;
+        }
+
+        .project-hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transform: scale(1.1); /* for parallax effect */
+        }
+
+        .project-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-base) 0%, rgba(20, 0, 0, 0.6) 50%, rgba(0,0,0,0.3) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .project-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(195, 17, 12, 0.2);
+            color: var(--primary-light);
+            border: 1px solid rgba(195, 17, 12, 0.4);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-title {
+            font-size: 4rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            margin: 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            line-height: 1.1;
+        }
+
+        /* Content Section */
+        .project-content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        .main-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .main-col h3 i {
+            color: var(--primary);
+        }
+
+        .desc-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        .workflow-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .workflow-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .tech-stack {
+            background: var(--bg-surface);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .tech-stack h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tags span {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            transition: all 0.3s;
+        }
+
+        .tech-tags span:hover {
+            border-color: var(--primary);
+            background: rgba(195, 17, 12, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li i {
+            color: var(--primary);
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery */
+        .project-gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+            height: 400px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Giant Footer */
+        .giant-footer {
+            margin-top: 50px;
+            padding: 150px 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: var(--bg-surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .giant-footer h1 {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .giant-footer h1:hover {
+            color: var(--primary);
+            -webkit-text-stroke: 0px;
+            text-shadow: 0 0 40px rgba(195, 17, 12, 0.4);
+        }
+
+        /* Error state */
+        .error-msg {
+            text-align: center;
+            padding: 200px 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        @media (max-width: 900px) {
+            .project-content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .project-title { font-size: 2.5rem; }
+            .project-gallery { grid-template-columns: 1fr; }
+            .gallery-item { height: 300px; }
+            .back-btn { top: 20px; left: 20px; padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html#projects" class="back-btn" id="backBtn">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <div id="app">
+        <!-- Injected by JS -->
+    </div>
+
+    <!-- Data & Scripts -->
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            const app = document.getElementById('app');
+
+            if (!projectId || !projectsData[projectId]) {
+                app.innerHTML = '<div class="error-msg">Project not found. <br><br> <a href="index.html" style="color:#fff; text-decoration:underline; font-size:1.2rem;">Return Home</a></div>';
+                return;
+            }
+
+            const data = projectsData[projectId];
+
+            // Generate Gallery Images
+            const allImages = [
+                'images/projects/helmet.jpg', 'images/projects/cancer.jpg', 'images/projects/depression.jpg', 
+                'images/projects/maps-scraper.jpg', 'images/projects/social-bot.jpg', 'images/projects/workflow.jpg',
+                'images/projects/health-saas.jpg', 'images/projects/travel.jpg', 'images/projects/analytics.jpg'
+            ];
+            // Filter out main image, pick 2 random images for gallery
+            const filteredImages = allImages.filter(img => img !== data.img);
+            const randomImgs = [
+                filteredImages[Math.floor(Math.random() * filteredImages.length)], 
+                filteredImages[Math.floor(Math.random() * filteredImages.length)]
+            ];
+
+            // Build HTML
+            app.innerHTML = `
+                <!-- Hero Section -->
+                <section class="project-hero">
+                    <img src="${data.img}" alt="${data.title}" class="project-hero-bg" id="heroBg">
+                    <div class="project-hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="project-label gs-reveal">${data.label}</div>
+                        <h1 class="project-title gs-reveal">${data.title}</h1>
+                    </div>
+                </section>
+
+                <!-- Content Layout -->
+                <section class="project-content-wrapper">
+                    <!-- Left Column: Description & Workflow -->
+                    <div class="main-col">
+                        <h3 class="gs-reveal"><i class="fas fa-align-left"></i> Overview</h3>
+                        <p class="desc-text gs-reveal">${data.desc}</p>
+                        
+                        <h3 class="gs-reveal" style="margin-top: 60px;"><i class="fas fa-project-diagram"></i> Architecture & Workflow</h3>
+                        <div class="workflow-box gs-reveal">
+                            <p>${data.workflow}</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Tech & Features -->
+                    <div class="sidebar">
+                        <div class="tech-stack gs-reveal">
+                            <h4>Technologies Used</h4>
+                            <div class="tech-tags">
+                                ${data.tech.map(t => `<span>${t}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="tech-stack gs-reveal" style="margin-top: 20px;">
+                            <h4>Key Features & Impact</h4>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check-circle"></i> High performance and optimized for production environments.</li>
+                                <li><i class="fas fa-check-circle"></i> Fully responsive UI/UX with state-of-the-art physics animations.</li>
+                                <li><i class="fas fa-check-circle"></i> Secure backend architecture ensuring data integrity.</li>
+                                <li><i class="fas fa-check-circle"></i> Developed leveraging Agentic AI workflows for rapid iteration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery -->
+                <section class="project-gallery">
+                    <div class="gallery-item gs-reveal">
+                        <img src="${randomImgs[0]}" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item gs-reveal">
+                        <img src="${randomImgs[1]}" alt="Gallery Image 2">
+                    </div>
+                </section>
+
+                <!-- Giant Footer -->
+                <div class="giant-footer gs-reveal">
+                    <h1>DEVELOPED BY HUNZILA NISAR</h1>
+                </div>
+            `;
+
+            // Setup GSAP Animations (Framer Motion Feel)
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Parallax Hero Image
+            gsap.to('#heroBg', {
+                yPercent: 30,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.project-hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
+            // Intro stagger animations
+            gsap.from('.gs-reveal', {
+                y: 60,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.1,
+                ease: 'elastic.out(1, 0.75)',
+                scrollTrigger: {
+                    trigger: '.project-content-wrapper',
+                    start: 'top 85%'
+                }
+            });
+            
+            // Initial Hero text animation
+            gsap.from('.hero-content .gs-reveal', {
+                y: 40,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: 'power3.out',
+                delay: 0.2
+            });
+
+            // Back button pop in
+            gsap.from('#backBtn', {
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                ease: 'elastic.out(1, 0.75)',
+                delay: 0.5
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,608 +1,433 @@
-// ===================================
-// Configuration & Constants
-// ===================================
-const CONFIG = {
-    // Replace this with your actual Gemini API key
-    GEMINI_API_KEY: 'AIzaSyAxCaPHQG21uhbVSYPdCUklIKHfilZKTAk', // Paste your API key here
-    GEMINI_API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent'
-};
+/* ══════════════════════════════════════════════════════════════
+   HUNZILA NISAR — PREMIUM PORTFOLIO SCRIPTS
+   GSAP + ScrollTrigger + Custom Interactions
+   ══════════════════════════════════════════════════════════════ */
 
-// Portfolio data for AI context
-const PORTFOLIO_CONTEXT = `
-You are an AI assistant for Hunzila Nisar's portfolio. Here's information about her:
+'use strict';
 
-PROFILE:
-- Name: Hunzila Nisar
-- Location: Lodhran, Pakistan
-- Email: hunzilanisar123@gmail.com
-- Phone: +92 318 6326746
-- Title: AI/ML Engineer & Full-Stack Developer
-- Education: BSc in Artificial Intelligence from The Islamia University of Bahawalpur (2021-2025)
+// ── Mark JS as loaded immediately (so reveal animations work) ──
+document.body.classList.add('js-ready');
 
-SKILLS:
-AI/ML: Python, PyTorch, TensorFlow, OpenCV, Scikit-learn, Pandas, NumPy
-Web Development: React, Node.js, Express, MongoDB, HTML, CSS, JavaScript, Material UI, Bootstrap
-IoT: Arduino, ESP32, Sensor Integration
-Tools: Git, GitHub, Docker, REST APIs
+// ── Register GSAP Plugins ──
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-MAJOR PROJECTS:
-1. Smart Helmet with Navigation System (FYP) - IoT safety system with GPS, crash detection, facial recognition (90% accuracy, A+ grade)
-2. Cancer Detection System - ML pipeline achieving 96% accuracy with Random Forest
-3. Video-based Depression Screening - Computer vision system for mental health screening
-4. Wanderlust - Full-stack MERN travel platform
-5. IPL Analytics Dashboard - Data analysis and visualization
+/* ═══════════════════════════════════
+   PRELOADER (TERMINAL AI STYLE)
+═══════════════════════════════════ */
+document.body.style.overflow = 'hidden';
 
-EXPERIENCE:
-- Project Engineer at IUB (Jan 2025 - May 2025) - Smart Helmet project
-- Front-End Development Intern (Aug 2024 - Oct 2024) - React development
-
-CERTIFICATIONS:
-- Front-End Development Certificate
-- ML/AI Course (3 months, NAVTTC affiliated)
-- Arduino Circuiting Certificate
-- 3rd Position - Annual Expo 2022
-
-ACHIEVEMENTS:
-- 90% accuracy in Smart Helmet system
-- 96% accuracy in Cancer Detection
-- A+ grade in Final Year Project
-- Multiple certifications and awards
-
-Answer questions about Hunzila's skills, projects, experience, and qualifications in a friendly, professional manner.
-`;
-
-// ===================================
-// Preloader
-// ===================================
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-        initAnimations();
-    }, 2000);
-});
-
-// ===================================
-// GSAP Animations
-// ===================================
-function initAnimations() {
-    gsap.registerPlugin(ScrollTrigger, TextPlugin);
-    
-    // Hero typing animation
-    const roles = [
-        'AI/ML Engineer',
-        'Full-Stack Developer',
-        'IoT Enthusiast',
-        'Problem Solver',
-        'Tech Innovator'
-    ];
-    
-    let roleIndex = 0;
-    const typingText = document.querySelector('.typing-text');
-    
-    function typeRole() {
-        const currentRole = roles[roleIndex];
-        let charIndex = 0;
-        
-        const typeInterval = setInterval(() => {
-            if (charIndex < currentRole.length) {
-                typingText.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            } else {
-                clearInterval(typeInterval);
-                setTimeout(() => {
-                    eraseRole();
-                }, 2000);
-            }
-        }, 100);
-    }
-    
-    function eraseRole() {
-        const currentRole = roles[roleIndex];
-        let charIndex = currentRole.length;
-        
-        const eraseInterval = setInterval(() => {
-            if (charIndex > 0) {
-                typingText.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                clearInterval(eraseInterval);
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(() => {
-                    typeRole();
-                }, 500);
-            }
-        }, 50);
-    }
-    
-    typeRole();
-    
-    // Scroll animations for sections
-    gsap.utils.toArray('section').forEach(section => {
-        gsap.from(section.querySelector('.section-header'), {
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-                end: 'top 50%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 0,
-            y: 50,
-            duration: 0.8
-        });
-    });
-    
-    // Skill bars animation
-    gsap.utils.toArray('.skill-progress').forEach(bar => {
-        const progress = bar.getAttribute('data-progress');
-        
-        gsap.to(bar, {
-            scrollTrigger: {
-                trigger: bar,
-                start: 'top 80%'
-            },
-            width: `${progress}%`,
-            duration: 1.5,
-            ease: 'power2.out'
-        });
-    });
-    
-    // Stats counter animation
-    gsap.utils.toArray('.stat-number').forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        
-        ScrollTrigger.create({
-            trigger: stat,
-            start: 'top 80%',
-            onEnter: () => {
-                gsap.to(stat, {
-                    textContent: target,
-                    duration: 2,
-                    snap: { textContent: 1 },
-                    ease: 'power1.out'
-                });
-            }
-        });
-    });
-    
-    // Cards hover animations
-    gsap.utils.toArray('.project-card, .cert-card, .hobby-card').forEach(card => {
-        gsap.from(card, {
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 85%'
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.6,
-            ease: 'power2.out'
-        });
-    });
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+  preloader.classList.add('hidden');
+  document.body.style.overflow = '';
+  setTimeout(initHeroAnimations, 100);
+  setTimeout(checkAllReveals, 300);
 }
 
-// ===================================
-// Custom Cursor
-// ===================================
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+const progressBar = document.querySelector('.loading-progress');
+const progressText = document.querySelector('.loading-text');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    setTimeout(() => {
-        cursorFollower.style.left = e.clientX + 'px';
-        cursorFollower.style.top = e.clientY + 'px';
-    }, 100);
-});
+if (progressBar && progressText) {
+  let progress = 0;
+  
+  // Phase 1: Booting
+  setTimeout(() => { progressText.textContent = "BOOTING AI KERNEL..."; }, 500);
+  
+  // Phase 2: Loading Models
+  setTimeout(() => { progressText.textContent = "LOADING NEURAL WEIGHTS..."; }, 1500);
+  
+  // Phase 3: Ready
+  setTimeout(() => { progressText.textContent = "AGENTIC SYSTEMS ONLINE."; }, 2800);
 
-// Cursor interactions
-document.querySelectorAll('a, button, .project-card, .social-icon').forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5)';
-        cursorFollower.style.transform = 'scale(1.5)';
-    });
-    
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorFollower.style.transform = 'scale(1)';
-    });
-});
+  const loaderInterval = setInterval(() => {
+    progress += Math.random() * 8;
+    if (progress > 100) {
+      progress = 100;
+      clearInterval(loaderInterval);
+      setTimeout(hidePreloader, 600); // Hide after reaching 100%
+    }
+    progressBar.style.width = progress + '%';
+  }, 100);
+} else {
+  // Fallback if elements are missing
+  window.addEventListener('load', () => setTimeout(hidePreloader, 2500));
+  setTimeout(hidePreloader, 4000);
+}
 
-// ===================================
-// Navigation
-// ===================================
+/* Custom cursor removed */
+/* ═══════════════════════════════════
+   NAVBAR
+═══════════════════════════════════ */
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
-// Navbar scroll effect
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+  if (navbar) {
+    navbar.classList.toggle('scrolled', window.scrollY > 80);
+  }
+  updateActiveNav();
 });
 
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-});
+  });
+}
 
-// Close menu on link click
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
+  link.addEventListener('click', () => {
+    if (navMenu) navMenu.classList.remove('active');
+  });
 });
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ===================================
-// Particles.js Configuration
-// ===================================
-if (typeof particlesJS !== 'undefined') {
-    particlesJS('particles-js', {
-        particles: {
-            number: {
-                value: 80,
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: '#00f0ff'
-            },
-            shape: {
-                type: 'circle'
-            },
-            opacity: {
-                value: 0.5,
-                random: false
-            },
-            size: {
-                value: 3,
-                random: true
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#00f0ff',
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 2,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false
-            }
-        },
-        interactivity: {
-            detect_on: 'canvas',
-            events: {
-                onhover: {
-                    enable: true,
-                    mode: 'grab'
-                },
-                onclick: {
-                    enable: true,
-                    mode: 'push'
-                },
-                resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
-                    }
-                },
-                push: {
-                    particles_nb: 4
-                }
-            }
-        },
-        retina_detect: true
-    });
-}
-
-// ===================================
-// Contact Form
-// ===================================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Here you would typically send the form data to a backend
-    // For now, we'll just show a success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-});
-
-// ===================================
-// AI Chatbot with Gemini
-// ===================================
-const chatbotToggle = document.getElementById('chatbotToggle');
-const chatbotWindow = document.getElementById('chatbotWindow');
-const chatbotClose = document.getElementById('chatbotClose');
-const chatbotMessages = document.getElementById('chatbotMessages');
-const chatbotInput = document.getElementById('chatbotInput');
-const chatbotSend = document.getElementById('chatbotSend');
-
-let conversationHistory = [];
-
-// Toggle chatbot
-chatbotToggle.addEventListener('click', () => {
-    chatbotWindow.classList.toggle('active');
-});
-
-chatbotClose.addEventListener('click', () => {
-    chatbotWindow.classList.remove('active');
-});
-
-// Send message
-chatbotSend.addEventListener('click', sendMessage);
-chatbotInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        sendMessage();
+function updateActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollPos = window.scrollY + 120;
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+    if (link) {
+      if (scrollPos >= top && scrollPos < top + height) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
     }
+  });
+}
+
+/* ═══════════════════════════════════
+   PARTICLES.JS
+═══════════════════════════════════ */
+if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 55, density: { enable: true, value_area: 900 } },
+      color: { value: ['#8b5cf6', '#06b6d4', '#10b981'] },
+      shape: { type: 'circle' },
+      opacity: { value: 0.4, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+      size: { value: 2.5, random: true },
+      line_linked: { enable: true, distance: 140, color: '#8b5cf6', opacity: 0.12, width: 1 },
+      move: { enable: true, speed: 1.2, direction: 'none', random: true, out_mode: 'out' }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+      modes: { grab: { distance: 180, line_linked: { opacity: 0.4 } }, push: { particles_nb: 2 } }
+    },
+    retina_detect: true
+  });
+}
+
+/* ═══════════════════════════════════
+   TYPING ANIMATION
+═══════════════════════════════════ */
+const typingEl = document.querySelector('.typing-text');
+const phrases = ['AI Engineer', 'Agentic AI Expert'];
+
+let phraseIdx = 0, charIdx = 0, isDeleting = false;
+
+function typeLoop() {
+  if (!typingEl) return;
+  const current = phrases[phraseIdx];
+  if (!isDeleting) {
+    typingEl.textContent = current.slice(0, charIdx + 1);
+    charIdx++;
+    if (charIdx === current.length) {
+      isDeleting = true;
+      setTimeout(typeLoop, 2500);
+      return;
+    }
+  } else {
+    typingEl.textContent = current.slice(0, charIdx - 1);
+    charIdx--;
+    if (charIdx === 0) {
+      isDeleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+    }
+  }
+  setTimeout(typeLoop, isDeleting ? 45 : 120);
+}
+
+/* ═══════════════════════════════════
+   HERO ANIMATIONS
+═══════════════════════════════════ */
+function initHeroAnimations() {
+  setTimeout(typeLoop, 300);
+
+  try {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from('.hero-badge', { y: 30, opacity: 0, duration: 0.6 })
+      .from('.hero-title .text-line', { y: 60, opacity: 0, duration: 0.8, stagger: 0.15 }, '-=0.3')
+      .from('.typing-container', { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
+      .from('.hero-description', { y: 20, opacity: 0, duration: 0.5 }, '-=0.2')
+      .from('.hero-cta .btn', { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, '-=0.2')
+      .from('.social-links .social-icon', { y: 20, opacity: 0, duration: 0.4, stagger: 0.08 }, '-=0.2')
+      .from('.hexagon-wrapper', { scale: 0.7, opacity: 0, duration: 0.9, ease: 'back.out(1.5)' }, '-=0.8')
+      .from('.float-icon', { scale: 0, opacity: 0, duration: 0.5, stagger: 0.15, ease: 'back.out(2)' }, '-=0.4')
+      .from('.scroll-indicator', { y: 20, opacity: 0, duration: 0.5 }, '-=0.2');
+
+    // Floating hero image
+    gsap.to('.hexagon-wrapper', { y: -15, duration: 3, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  } catch (e) {
+    console.warn('GSAP hero animation error:', e);
+  }
+}
+
+/* ═══════════════════════════════════
+   SCROLL REVEAL — IntersectionObserver
+═══════════════════════════════════ */
+function checkAllReveals() {
+  // Force-reveal elements already in viewport
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.05,          // Very low – triggers when just 5% visible
+  rootMargin: '0px 0px 0px 0px'  // No margin cutoff
 });
 
-async function sendMessage() {
-    const message = chatbotInput.value.trim();
-    if (!message) return;
-    
-    // Add user message to chat
-    addMessageToChat(message, 'user');
-    chatbotInput.value = '';
-    
-    // Show typing indicator
-    const typingIndicator = addTypingIndicator();
-    
-    try {
-        // Call Gemini API
-        const response = await callGeminiAPI(message);
-        
-        // Remove typing indicator
-        typingIndicator.remove();
-        
-        // Add bot response
-        addMessageToChat(response, 'bot');
-    } catch (error) {
-        typingIndicator.remove();
-        
-        // Fallback response if API fails
-        const fallbackResponse = getFallbackResponse(message);
-        addMessageToChat(fallbackResponse, 'bot');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Also re-check on scroll (belt-and-suspenders approach)
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 20) {
+      el.classList.add('visible');
     }
-}
+  });
+}, { passive: true });
 
-function addMessageToChat(message, sender) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
-    
-    messageDiv.innerHTML = `
-        <div class="message-avatar">
-            <i class="fas fa-${sender === 'user' ? 'user' : 'robot'}"></i>
-        </div>
-        <div class="message-content">${message}</div>
-    `;
-    
-    chatbotMessages.appendChild(messageDiv);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-}
-
-function addTypingIndicator() {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'bot-message typing-indicator';
-    typingDiv.innerHTML = `
-        <div class="message-avatar">
-            <i class="fas fa-robot"></i>
-        </div>
-        <div class="message-content">Typing...</div>
-    `;
-    chatbotMessages.appendChild(typingDiv);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    return typingDiv;
-}
-
-async function callGeminiAPI(userMessage) {
-    // Check if API key is configured
-    if (!CONFIG.GEMINI_API_KEY || CONFIG.GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
-        console.warn('⚠️ Gemini API key not configured. Using fallback responses.');
-        throw new Error('API key not configured');
+/* ═══════════════════════════════════
+   SKILL BAR ANIMATIONS
+═══════════════════════════════════ */
+const skillBars = document.querySelectorAll('.skill-progress');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const progress = bar.getAttribute('data-progress');
+      setTimeout(() => { bar.style.width = progress + '%'; }, 200);
+      skillObserver.unobserve(bar);
     }
-    
-    const prompt = `${PORTFOLIO_CONTEXT}
+  });
+}, { threshold: 0.1 });
 
-User Question: ${userMessage}
+skillBars.forEach(bar => skillObserver.observe(bar));
 
-Please provide a helpful, friendly response based on Hunzila's portfolio information. Keep responses concise (2-3 sentences) and professional.`;
-    
-    try {
-        const response = await fetch(`${CONFIG.GEMINI_API_URL}?key=${CONFIG.GEMINI_API_KEY}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                contents: [{
-                    parts: [{
-                        text: prompt
-                    }]
-                }],
-                generationConfig: {
-                    temperature: 0.9,
-                    topK: 1,
-                    topP: 1,
-                    maxOutputTokens: 300,
-                },
-                safetySettings: [
-                    {
-                        category: "HARM_CATEGORY_HARASSMENT",
-                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                    },
-                    {
-                        category: "HARM_CATEGORY_HATE_SPEECH",
-                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                    },
-                    {
-                        category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                    },
-                    {
-                        category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                    }
-                ]
-            })
-        });
-        
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('❌ Gemini API Error:', errorData);
-            throw new Error(`API Error: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        // Check if we got a valid response
-        if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-            const botResponse = data.candidates[0].content.parts[0].text;
-            console.log('✅ Gemini API Response received');
-            return botResponse;
+/* ═══════════════════════════════════
+   COUNTER ANIMATION
+═══════════════════════════════════ */
+const counters = document.querySelectorAll('.stat-number');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-target'));
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target;
+          clearInterval(timer);
         } else {
-            console.error('❌ Invalid response format:', data);
-            throw new Error('Invalid response format');
+          el.textContent = Math.floor(current);
         }
-        
-    } catch (error) {
-        console.error('❌ Error calling Gemini API:', error);
-        throw error;
+      }, 25);
+      counterObserver.unobserve(el);
     }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(c => counterObserver.observe(c));
+
+/* -------------------------------------------------------------
+   GSAP SCROLL ANIMATIONS (Framer Motion Feel)
+------------------------------------------------------------- */
+try {
+  // Fix animation conflict: remove .reveal from elements managed by GSAP
+  document.querySelectorAll('.agentic-card, .timeline-item, .cert-card, .project-card, .passion-card').forEach(el => {
+      el.classList.remove('reveal');
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.transition = 'none';
+  });
+
+  // Agentic cards spring pop-in (Framer Motion feel)
+  gsap.utils.toArray('.agentic-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: { trigger: card, start: 'top 92%' },
+      scale: 0.8, opacity: 0, duration: 1.2,
+      delay: i * 0.1, ease: 'elastic.out(1, 0.75)'
+    });
+  });
+
+  // Passion cards spring pop-in
+  gsap.utils.toArray('.passion-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: { trigger: card, start: 'top 92%' },
+      scale: 0.8, opacity: 0, duration: 1.2,
+      delay: (i % 3) * 0.1, ease: 'elastic.out(1, 0.75)'
+    });
+  });
+
+  // Timeline items spring in alternating
+  gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+    gsap.from(item, {
+      scrollTrigger: { trigger: item, start: 'top 88%' },
+      x: i % 2 === 0 ? -60 : 60, opacity: 0,
+      duration: 1.2, ease: 'elastic.out(1, 0.75)'
+    });
+  });
+
+    // Cert cards — premium stagger flip-in (Framer Motion card reveal)
+    gsap.utils.toArray('.cert-card').forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 50, rotateY: 15, scale: 0.88 },
+        {
+          scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+          opacity: 1, y: 0, rotateY: 0, scale: 1,
+          duration: 0.9,
+          delay: (i % 4) * 0.12,
+          ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          clearProps: 'transform'
+        }
+      );
+    });
+  
+  // Projects spring reveal
+  gsap.utils.toArray('.project-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: { trigger: card, start: 'top 90%' },
+      y: 60, opacity: 0, duration: 1.2,
+      delay: (i % 3) * 0.1, ease: 'elastic.out(1, 0.75)'
+    });
+  });
+
+} catch (e) {
+  console.warn('GSAP ScrollTrigger error:', e);
 }
 
-function getFallbackResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Skills related
-    if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
-        return "Hunzila specializes in AI/ML (Python, PyTorch, TensorFlow, OpenCV) and Full-Stack Development (React, Node.js, Express, MongoDB). She also has IoT experience with Arduino and ESP32!";
+/* ═══════════════════════════════════
+   3D CARD TILT
+═══════════════════════════════════ */
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotX = ((y - cy) / cy) * -5;
+    const rotY = ((x - cx) / cx) * 5;
+    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-8px)`;
+    card.style.transition = 'transform 0.1s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+  });
+});
+
+/* ═══════════════════════════════════
+   MAGNETIC BUTTONS
+═══════════════════════════════════ */
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.2;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.2;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+    btn.style.transition = 'transform 0.1s ease';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+    btn.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  });
+});
+
+/* ═══════════════════════════════════
+   SCROLL PARALLAX (Hero fade out)
+═══════════════════════════════════ */
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent && scrolled < window.innerHeight) {
+    const opacity = 1 - (scrolled / (window.innerHeight * 0.75));
+    heroContent.style.opacity = Math.max(0, opacity);
+    heroContent.style.transform = `translateY(${scrolled * 0.12}px)`;
+  }
+}, { passive: true });
+
+/* ═══════════════════════════════════
+   SMOOTH SCROLL
+═══════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = anchor.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
-    
-    // Projects related
-    if (lowerMessage.includes('project')) {
-        return "Her notable projects include a Smart Helmet with 90% accuracy (A+ grade), Cancer Detection System achieving 96% accuracy, and a MERN stack travel platform called Wanderlust. Check out the Projects section for details!";
-    }
-    
-    // Experience related
-    if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-        return "Hunzila worked as a Project Engineer on the Smart Helmet project at IUB and completed a Front-End Development internship focusing on React. She has 3+ years of hands-on experience in AI/ML and web development.";
-    }
-    
-    // Education related
-    if (lowerMessage.includes('education') || lowerMessage.includes('degree')) {
-        return "She holds a BSc in Artificial Intelligence from The Islamia University of Bahawalpur (2021-2025), specializing in AI, ML, Deep Learning, and IoT systems.";
-    }
-    
-    // Contact related
-    if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
-        return "You can reach Hunzila at hunzilanisar123@gmail.com or +92 318 6326746. Feel free to connect via LinkedIn or GitHub as well!";
-    }
-    
-    // Achievements related
-    if (lowerMessage.includes('achievement') || lowerMessage.includes('award')) {
-        return "She secured 3rd position at the Annual Expo 2022 and earned an A+ grade for her Smart Helmet FYP with 90% system accuracy. She also has multiple certifications including Front-End Development and ML/AI courses.";
-    }
-    
-    // Location related
-    if (lowerMessage.includes('location') || lowerMessage.includes('where')) {
-        return "Hunzila is based in Lodhran, Pakistan. She's open to remote opportunities and collaborations worldwide!";
-    }
-    
-    // Hire/collaborate related
-    if (lowerMessage.includes('hire') || lowerMessage.includes('collaborate') || lowerMessage.includes('available')) {
-        return "Hunzila is currently open to exciting opportunities in AI/ML and Full-Stack Development! Feel free to reach out via the contact form or email at hunzilanisar123@gmail.com.";
-    }
-    
-    // Default response
-    return "I'm here to help you learn about Hunzila's skills, projects, and experience! You can ask me about her technical expertise, projects, education, or how to get in touch. What would you like to know?";
+  });
+});
+
+/* ═══════════════════════════════════
+   CONTACT FORM
+═══════════════════════════════════ */
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span>Sent! ✓</span>';
+      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      form.reset();
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }, 1500);
+  });
 }
 
-// ===================================
-// Utility Functions
-// ===================================
+console.log('%c🤖 Hunzila Nisar — AI Engineer & Agentic AI Developer', 'color: #8b5cf6; font-size:14px; font-weight:bold;');
+console.log('%cPortfolio loaded successfully ✓', 'color: #10b981; font-size:12px;');
 
-// Lazy load images (if you add images later)
-const images = document.querySelectorAll('img[data-src]');
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            observer.unobserve(img);
+// Click listener for project pages
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+        // Prevent opening if clicking on github/link icons
+        if(e.target.closest('.project-link')) return;
+        const id = card.getAttribute('data-project-id');
+        if(id) {
+            window.location.href = 'project.html?id=' + id;
         }
     });
 });
-
-images.forEach(img => imageObserver.observe(img));
-
-// ===================================
-// Console Easter Egg
-// ===================================
-console.log('%cHunzila Nisar Portfolio', 'color: #00f0ff; font-size: 24px; font-weight: bold;');
-console.log('%cLooking for a talented AI/ML Engineer? You found one!', 'color: #b744ff; font-size: 14px;');
-console.log('%cEmail: hunzilanisar123@gmail.com', 'color: #a0aec0; font-size: 12px;');
-console.log('%cGitHub: github.com/HunzilaRajput746', 'color: #a0aec0; font-size: 12px;');
-
-// ===================================
-// Performance Optimization
-// ===================================
-
-// Debounce function for scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Optimize scroll events
-window.addEventListener('scroll', debounce(() => {
-    // Your scroll-based logic here
-}, 10));
