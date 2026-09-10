@@ -31,22 +31,6 @@ const projectsData = {
         'desc': 'End-to-end lead generation scraper targeting Google Maps. Extracts business emails, phone numbers, and metadata with no listing cap — scrapes till the last result. Supports multi-city input (semicolon-separated), combined Excel export with city-by-city breakdown, and MD5-based duplicate detection across cells and sessions.',
         'workflow': 'Selenium drives the hidden browser to inject scroll events into the Maps results pane. BeautifulSoup parses the DOM dynamically. Extracted nodes are hashed via MD5 to prevent duplicates in the Pandas DataFrame. Finally, data is chunked and written to formatted Excel sheets via OpenPyXL.'
     },
-    'p5': {
-        'title': 'AI Social Media Auto-Poster Bot',
-        'img': 'images/projects/social-bot.jpg',
-        'label': 'Vibe Coded 2025',
-        'tech': ['Python', 'LinkedIn API v2', 'Facebook Graph API', 'OpenAI', 'python-dotenv'],
-        'desc': 'AI-powered automation bot that generates topic-based content and simultaneously posts to LinkedIn (API v2), Facebook Pages, and multiple Facebook Groups via Graph API. Handles FB image limitation by pre-uploading images as unpublished Page posts.',
-        'workflow': '1. Fetches trending topics or user prompts. 2. Calls OpenAI API to generate platform-optimized copy. 3. Authenticates via OAuth2 (LinkedIn/FB). 4. If image is included, pre-uploads to FB Graph API to get Media ID. 5. Dispatches final payloads asynchronously to all targeted platforms.'
-    },
-    'p6': {
-        'title': 'N8N Workflow Generator (Groq AI)',
-        'img': 'images/projects/workflow.jpg',
-        'label': 'Vibe Coded 2025',
-        'tech': ['Python', 'Groq API', 'n8n', 'CLI', 'NLP'],
-        'desc': 'CLI tool using Groq API to auto-generate n8n automation workflows from natural language prompts. Integrated python-dotenv for secure API key management. Describe a workflow in plain English, get a ready-to-import n8n JSON instantly — 3-step setup.',
-        'workflow': 'User inputs a natural language prompt via the CLI. The prompt is injected into a specialized system prompt detailing the n8n JSON schema. The payload is sent to Groq API (Llama 3). The response is parsed, validated against the n8n schema, and saved as a downloadable JSON file ready for import.'
-    },
     'p7': {
         'title': 'HealthSaaS — AI Clinic Management',
         'img': 'images/projects/health-saas.jpg',
