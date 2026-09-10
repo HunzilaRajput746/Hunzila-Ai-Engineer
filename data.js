@@ -70,5 +70,14 @@ const projectsData = {
         'tech': ['Python', 'Pandas', 'Plotly', 'Data Analysis', 'Visualization'],
         'desc': 'Comprehensive EDA on IPL match and player datasets using Pandas and Plotly. Extracted actionable insights including top scorers, strike rates, venue patterns, and team performance metrics to support stakeholder decisions in scouting and strategic analysis.',
         'workflow': 'Data loaded via Pandas from raw CSVs. Cleaned missing values and handled datetime conversions. GroupBy aggregations and statistical analysis performed to identify key trends. Interactive Plotly charts (bar, scatter, heatmaps) generated for reporting.'
+    },
+    'p10': {
+        'title': 'Orbitwork — Job Board & Freelance Marketplace',
+        'img': 'images/projects/orbitwork-employer-dashboard.png',
+        'label': 'Full-Stack MERN',
+        'tech': ['React', 'Material UI', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcryptjs'],
+        'desc': 'Production-ready job board and freelance marketplace connecting employers with independent talent. Employers can publish roles, review applicants, and update application statuses, while candidates can search open positions, apply with cover messages, and track their applications.',
+        'workflow': 'The React and Material UI client communicates with an Express REST API. MongoDB stores users, jobs, and applications through Mongoose models. JWT authentication and role-based middleware protect every private route, while server-side ownership checks prevent users from modifying resources they do not own. A compound MongoDB index prevents duplicate applications for the same job and candidate.',
+        'gallery': ['images/projects/orbitwork-login.png', 'images/projects/orbitwork-employer-dashboard.png', 'images/projects/orbitwork-candidate-dashboard.png']
     }
 };
