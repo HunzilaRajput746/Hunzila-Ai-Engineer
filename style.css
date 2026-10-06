@@ -2487,3 +2487,95 @@ textarea.form-control {
       grid-template-columns: 1fr;
    }
 }
+
+/* -------------------------------------------------------------
+   HIRE ME ON FIVERR SECTION
+------------------------------------------------------------- */
+.fiverr-section {
+   padding: 100px 0;
+   background: var(--bg-base);
+}
+.fiverr-subtitle {
+   text-align: center;
+   color: var(--text-2);
+   max-width: 640px;
+   margin: 0 auto 50px;
+   font-size: 1.05rem;
+}
+.fiverr-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+   max-width: 900px;
+   margin: 0 auto 40px;
+}
+.fiverr-card {
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: 16px;
+   padding: 36px 30px;
+   text-decoration: none;
+   display: block;
+   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.fiverr-card:hover {
+   transform: translateY(-6px);
+   border-color: var(--border-hi);
+   box-shadow: var(--shadow-sm);
+}
+.fiverr-card-icon {
+   width: 60px;
+   height: 60px;
+   border-radius: 14px;
+   background: var(--accent-dim);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 22px;
+}
+.fiverr-card-icon i {
+   font-size: 1.6rem;
+   color: var(--accent);
+}
+.fiverr-card h3 {
+   color: var(--text-1);
+   font-size: 1.35rem;
+   margin-bottom: 12px;
+}
+.fiverr-card p {
+   color: var(--text-2);
+   font-size: 0.98rem;
+   line-height: 1.6;
+   margin-bottom: 20px;
+}
+.fiverr-card-cta {
+   color: var(--accent);
+   font-weight: 600;
+   font-size: 0.95rem;
+}
+.fiverr-card-cta i {
+   margin-left: 6px;
+   transition: margin-left 0.3s ease;
+}
+.fiverr-card:hover .fiverr-card-cta i {
+   margin-left: 12px;
+}
+.fiverr-note {
+   text-align: center;
+   color: var(--text-3);
+   font-size: 0.9rem;
+   max-width: 700px;
+   margin: 0 auto;
+}
+.fiverr-note i {
+   color: var(--accent);
+   margin-right: 6px;
+}
+.fiverr-note strong {
+   color: var(--text-2);
+}
+@media (max-width: 600px) {
+   .fiverr-grid {
+      grid-template-columns: 1fr;
+   }
+}
