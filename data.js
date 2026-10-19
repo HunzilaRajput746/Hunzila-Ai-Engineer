@@ -20,8 +20,9 @@ const projectsData = {
         'title': 'Self-Hosted n8n Workflow Automation Engine',
         'img': 'images/projects/workflow.jpg',
         'label': 'DevOps & Automation',
+        'live': 'https://n8n.devhunzila.site',
         'tech': ['n8n', 'Oracle Cloud VPS', 'Docker', 'Webhooks', 'REST APIs', 'AI Agents'],
-        'desc': 'Self-hosted production n8n automation engine deployed on Oracle Cloud VPS infrastructure. Powers custom multi-step event triggers, webhook ingestions, database synchronizations between MongoDB and external tools, and multi-agent AI execution pipelines with zero third-party subscription limits.',
+        'desc': 'Self-hosted production n8n automation engine deployed on Oracle Cloud VPS infrastructure (live at n8n.devhunzila.site). Powers custom multi-step event triggers, webhook ingestions, database synchronizations between MongoDB and external tools, and multi-agent AI execution pipelines with zero third-party subscription limits.',
         'workflow': 'Containerized n8n running on an Oracle Cloud compute instance. Listens to inbound webhooks from CRM and client apps, runs intelligent branch logic with AI nodes (Groq / OpenAI / LangChain), transforms payloads, and updates databases in real time.'
     },
     'p1': {

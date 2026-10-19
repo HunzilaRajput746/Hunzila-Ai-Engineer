@@ -178,14 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalClose = document.getElementById('modalClose');
 
     if (modal && modalImg && modalClose) {
-        document.querySelectorAll('.project-visual-inner').forEach(container => {
+        document.querySelectorAll('.project-visual-inner, .cert-preview-wrapper').forEach(container => {
             container.addEventListener('click', (e) => {
                 // Ignore if clicked on an actual link
                 if (e.target.closest('a')) return;
                 const img = container.querySelector('img');
                 if (img) {
                     modalImg.src = img.src;
-                    modalImg.alt = img.alt || 'Project Preview';
+                    modalImg.alt = img.alt || 'Preview';
                     modal.classList.add('active');
                 }
             });
