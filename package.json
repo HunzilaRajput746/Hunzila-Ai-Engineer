@@ -1,0 +1,12 @@
+{
+  "name": "hunzila-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Hunzila Nisar — AI Engineer & Backend Specialist",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Hunzila Nisar",
+  "license": "MIT"
+}
