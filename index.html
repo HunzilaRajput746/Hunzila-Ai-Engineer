@@ -3,1036 +3,722 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunzila Nisar | AI Engineer & Agentic AI Developer</title>
-    <meta name="description" content="Portfolio of Hunzila Nisar — AI Engineer, Agentic AI Developer, Machine Learning Specialist & Full-Stack Developer from Pakistan.">
+    <title>Hunzila Nisar — AI Engineer &amp; Backend Specialist</title>
+    <meta name="description" content="Portfolio of Hunzila Nisar — AI & Backend Engineer specializing in production CRM systems, Agentic AI, LLM integration, and self-hosted cloud infrastructure.">
     <link rel="canonical" href="https://hunzilanisar.netlify.app/">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0d0d15">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <meta name="theme-color" content="#110720">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Hunzila Nisar — AI Engineer">
+    <meta property="og:site_name" content="Hunzila Nisar Portfolio">
     <meta property="og:url" content="https://hunzilanisar.netlify.app/">
-    <meta property="og:title" content="Hunzila Nisar | AI Engineer & Agentic AI Developer">
-    <meta property="og:description" content="Portfolio of Hunzila Nisar — AI Engineer and Agentic AI Developer building AI SaaS, AI agents, and full-stack web apps.">
+    <meta property="og:title" content="Hunzila Nisar — AI Engineer &amp; Backend Specialist">
+    <meta property="og:description" content="AI/ML Engineer with a BSc in Artificial Intelligence and production industry experience building live CRMs, AI agents, and workflow automations.">
     <meta property="og:image" content="https://hunzilanisar.netlify.app/portfolio.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hunzila Nisar | AI Engineer & Agentic AI Developer">
-    <meta name="twitter:description" content="Portfolio of Hunzila Nisar — AI Engineer and Agentic AI Developer building AI SaaS, AI agents, and full-stack web apps.">
+    <meta name="twitter:title" content="Hunzila Nisar — AI Engineer &amp; Backend Specialist">
+    <meta name="twitter:description" content="Building production CRM platforms, Agentic AI, and self-hosted cloud automation systems.">
     <meta name="twitter:image" content="https://hunzilanisar.netlify.app/portfolio.jpg">
 
-    <!-- Structured data -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Hunzila Nisar",
       "url": "https://hunzilanisar.netlify.app/",
-      "jobTitle": "AI Engineer & Agentic AI Developer",
-      "description": "AI Engineer and Agentic AI Developer from Pakistan — AI SaaS, AI agents, MERN stack web apps, and n8n automation.",
+      "jobTitle": "AI & Backend Engineer",
+      "email": "hunzilanisar123@gmail.com",
+      "telephone": "+923186326746",
       "sameAs": [
         "https://github.com/HunzilaRajput746",
         "https://www.linkedin.com/in/hunzila-nisar-ai"
       ],
-      "knowsAbout": ["Artificial Intelligence", "AI Agents", "Machine Learning", "MERN Stack", "n8n Automation", "SaaS Development"]
+      "knowsAbout": ["Artificial Intelligence", "Production CRMs", "Tailscale", "Oracle Cloud VPS", "n8n Automation", "Machine Learning", "MERN Stack"]
     }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Main Stylesheet (Figma Dark Purple Design) -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader-content">
-            <!-- Monogram Logo -->
-            <div class="preloader-monogram">
-                <svg class="preloader-rings" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="56" stroke="rgba(195,17,12,0.15)" stroke-width="1"/>
-                    <circle cx="60" cy="60" r="56" stroke="rgba(230,80,27,0.7)" stroke-width="1"
-                            stroke-dasharray="351.86" stroke-dashoffset="351.86"
-                            class="preloader-ring-fill"/>
-                    <circle cx="60" cy="60" r="44" stroke="rgba(116,10,3,0.4)" stroke-width="0.5"
-                            class="preloader-ring-spin"/>
-                </svg>
-                <div class="preloader-initials">HN</div>
+    <!-- Fixed Header / Navigation Bar -->
+    <header class="site-header" id="navbar">
+        <nav class="container nav-container">
+            <a href="#home" class="brand-logo" aria-label="Hunzila Nisar Home">
+                &lt;HN /&gt;
+                <span class="brand-badge">AI Eng</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#about" class="nav-link">About &amp; Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Hire Me <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-glow-bg"></div>
+
+            <div class="container hero-grid">
+                
+                <!-- Avatar Column with Figma Hand-drawn Arrow & Glow -->
+                <div class="hero-avatar-col">
+                    <div class="avatar-wrapper">
+                        <!-- Neon Glow Aura -->
+                        <div class="avatar-glow"></div>
+                        <img src="assets/me-glow.png" alt="Glow" class="avatar-glow-img" style="position:absolute; inset:-15px; width:calc(100% + 30px); height:calc(100% + 30px); object-fit:contain; opacity:0.85; pointer-events:none; z-index:1;">
+
+                        <!-- Avatar Photo -->
+                        <div class="avatar-image-container">
+                            <img src="portfolio.jpg" alt="Hunzila Nisar — AI Engineer" class="avatar-img">
+                        </div>
+
+                        <!-- Hand-drawn arrow & Hello speech bubble -->
+                        <div class="hero-greeting-box">
+                            <img src="assets/arrow.png" alt="Arrow pointing to avatar" class="arrow-icon">
+                            <div class="speech-bubble">
+                                Hello! I Am <span class="name-highlight">Hunzila Nisar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="hero-content-col">
+                    <p class="hero-lead-text">An AI Engineer who</p>
+                    
+                    <h1 class="hero-main-title">
+                        Judges a book<br>
+                        by its 
+                        <span class="circle-word-wrapper">
+                            <img src="assets/circle.png" alt="Hand-drawn circle" class="circle-sketch-img">
+                            <span class="gradient-cover-text">cover</span>
+                        </span>...
+                    </h1>
+
+                    <p class="hero-sub-motto">Because if the cover does not impress you what else can?</p>
+
+                    <div class="hero-role-tagline">
+                        I'm an <span id="typingRole" class="gradient-cover-text"></span><span class="typing-cursor">|</span>
+                    </div>
+
+                    <div class="hero-company-badge">
+                        <span>Currently, I'm an AI &amp; Backend Engineer at</span>
+                        <span class="company-pill">
+                            <i class="fas fa-code-branch"></i> Blizon Software House,
+                        </span>
+                    </div>
+
+                    <p class="hero-bio-summary">
+                        AI/ML Engineer with a BSc in Artificial Intelligence and current industry experience building and deploying production systems. Delivers live CRM platforms with integrated AI features and workflow automation on self-managed VPS infrastructure.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <span>View Featured Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <!-- Name -->
-            <div class="preloader-name">HUNZILA NISAR</div>
-            <!-- Progress -->
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
+        </section>
+
+        <!-- Work Experience Section (Figma Cards Layout) -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="section-title-center">Work Experience</h2>
+
+                <div class="experience-grid">
+
+                    <!-- Card 1: Blizon Software House -->
+                    <div class="experience-card">
+                        <div class="experience-card-icon">
+                            <img src="cards/card-1.png" alt="Blizon Software House Icon">
+                        </div>
+                        <div class="experience-card-body">
+                            <h3 class="experience-card-title">Blizon Software House — AI &amp; Backend Engineer</h3>
+                            <div class="experience-card-meta">
+                                <i class="fas fa-calendar-alt"></i> Jul 2026 – Present · 4 Months (Currently Working)
+                            </div>
+                            <p class="experience-card-desc">
+                                Building and deploying production client systems end-to-end: development, AI integration, automation, and server deployment. Delivered live production platforms including Revenui CRM (<a href="https://dashboard.revenue.inc" target="_blank" style="color:var(--purple-300); text-decoration:underline;">dashboard.revenue.inc</a>) and C17 CRM (<a href="https://dashboard.c17.ai" target="_blank" style="color:var(--purple-300); text-decoration:underline;">dashboard.c17.ai</a>) deployed on a Tailscale-secured VPS.
+                            </p>
+                            <a href="#projects" class="experience-learn-more">EXPLORE IMPACT &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: EnlivenAI Solutions -->
+                    <div class="experience-card">
+                        <div class="experience-card-icon">
+                            <img src="cards/card-2.png" alt="EnlivenAI Solutions Icon">
+                        </div>
+                        <div class="experience-card-body">
+                            <h3 class="experience-card-title">EnlivenAI Solutions LLC — AI/ML Intern</h3>
+                            <div class="experience-card-meta">
+                                <i class="fas fa-calendar-alt"></i> Jun 2026 – Sep 2026 · 3 Months
+                            </div>
+                            <p class="experience-card-desc">
+                                Contributed to multiple AI/ML projects undertaken by the company, completing assigned development tasks on time. Applied Python and AI/ML techniques to real client-facing work while collaborating with the engineering team.
+                            </p>
+                            <a href="#about" class="experience-learn-more">LEARN MORE &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Builtin Software House (NAVTTC) -->
+                    <div class="experience-card">
+                        <div class="experience-card-icon">
+                            <img src="cards/card-3.png" alt="Builtin Software House Icon">
+                        </div>
+                        <div class="experience-card-body">
+                            <h3 class="experience-card-title">Builtin Software House — AI Intern</h3>
+                            <div class="experience-card-meta">
+                                <i class="fas fa-calendar-alt"></i> Aug 2024 – Oct 2024 · NAVTTC Affiliated
+                            </div>
+                            <p class="experience-card-desc">
+                                Developed and tuned ML/DL models in Python (scikit-learn, PyTorch) for classification and prediction problems. Preprocessed and cleaned datasets to improve model training efficiency and integrated models via REST APIs.
+                            </p>
+                            <a href="#about" class="experience-learn-more">LEARN MORE &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: DevOps & Oracle VPS Automation -->
+                    <div class="experience-card">
+                        <div class="experience-card-icon">
+                            <img src="cards/card-4.png" alt="DevOps and Automation Icon">
+                        </div>
+                        <div class="experience-card-body">
+                            <h3 class="experience-card-title">Oracle VPS &amp; Self-Hosted n8n Automation</h3>
+                            <div class="experience-card-meta">
+                                <i class="fas fa-server"></i> Self-Hosted VPS Infrastructure · Tailscale Server Mesh
+                            </div>
+                            <p class="experience-card-desc">
+                                Self-hosted n8n workflow automation platform on an Oracle Cloud VPS instance. Designed and deployed Tailscale private mesh networking for orchestrating live CRM applications like C17 and Revenui with enterprise reliability and zero subscription limits.
+                            </p>
+                            <a href="#projects" class="experience-learn-more">EXPLORE SETUP &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <p class="loading-text">Initializing AI Systems...</p>
+        </section>
+
+        <!-- About & Technical Arsenal Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-banner-statement">
+                    I'm currently looking to join a <span class="highlight-purple">cross-functional team</span>
+                    <span class="sub-text">that values improving people's lives through intelligent AI systems &amp; accessible engineering</span>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto 3.5rem;">
+                    <img src="assets/illustration.png" alt="Technical Arsenal & Skills Overview" style="width:100%; height:auto; margin:0 auto; display:block;">
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="skills-container">
+
+                    <!-- Generative & Agentic AI -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="skill-cat-icon"><i class="fas fa-robot"></i></div>
+                            <h3>Agentic AI &amp; LLMs</h3>
+                        </div>
+                        <div class="skill-pills-wrap">
+                            <span class="skill-pill">LLM Integration</span>
+                            <span class="skill-pill">AI Agents</span>
+                            <span class="skill-pill">LangChain</span>
+                            <span class="skill-pill">Groq API</span>
+                            <span class="skill-pill">Prompt Engineering</span>
+                            <span class="skill-pill">RAG Systems</span>
+                            <span class="skill-pill">Multi-Agent Flow</span>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning & Deep Learning -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
+                            <h3>Machine Learning</h3>
+                        </div>
+                        <div class="skill-pills-wrap">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">PyTorch</span>
+                            <span class="skill-pill">scikit-learn</span>
+                            <span class="skill-pill">CNNs</span>
+                            <span class="skill-pill">Computer Vision</span>
+                            <span class="skill-pill">OpenCV</span>
+                            <span class="skill-pill">Pandas / NumPy</span>
+                        </div>
+                    </div>
+
+                    <!-- Full-Stack & APIs -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+                            <h3>Full-Stack &amp; APIs</h3>
+                        </div>
+                        <div class="skill-pills-wrap">
+                            <span class="skill-pill">React.js</span>
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Express.js</span>
+                            <span class="skill-pill">MongoDB</span>
+                            <span class="skill-pill">FastAPI</span>
+                            <span class="skill-pill">Next.js</span>
+                            <span class="skill-pill">REST APIs</span>
+                            <span class="skill-pill">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="skill-cat-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <h3>Cloud &amp; DevOps</h3>
+                        </div>
+                        <div class="skill-pills-wrap">
+                            <span class="skill-pill">Oracle Cloud VPS</span>
+                            <span class="skill-pill">Self-Hosted n8n</span>
+                            <span class="skill-pill">Tailscale Mesh</span>
+                            <span class="skill-pill">Docker</span>
+                            <span class="skill-pill">Git / GitHub</span>
+                            <span class="skill-pill">Linux Admin</span>
+                            <span class="skill-pill">Railway / Vercel</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects ("Lab") Section — Figma Alternating Layout -->
+        <section id="projects" class="projects-section">
+            <div class="container max-w-7xl">
+                <h2 class="section-title-center">Featured Projects</h2>
+
+                <!-- Project 1: Revenue.inc CRM (Odd: Content Left, Image Right) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-star"></i> Featured Production Project</p>
+                            <h3 class="project-heading-title">Revenue.inc — Sales CRM &amp; Analytics Platform</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Full-stack enterprise CRM platform currently in live active production (<a href="https://dashboard.revenue.inc" target="_blank" style="color:var(--purple-300); text-decoration:underline;">dashboard.revenue.inc</a>). Features a real-time sales analytics dashboard (calls tracking, closed TCV, MRR signed, conversion metrics), a developer task Kanban board with sprint refinement, automated SOP documentation, and AI-powered client workflows. Hosted and secured on a dedicated Tailscale VPS infrastructure.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">Express</span>
+                                <span class="project-tech-tag">MongoDB</span>
+                                <span class="project-tech-tag">Tailscale VPS</span>
+                                <span class="project-tech-tag">Tailwind CSS</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://dashboard.revenue.inc" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="Visit Revenue.inc CRM">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="project.html?id=revenue-crm" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/revenue-analytics.png" alt="Revenue.inc Sales Analytics Dashboard" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: C17 CRM (Even: Content Right, Image Left) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row reversed">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-star"></i> Featured Production Project</p>
+                            <h3 class="project-heading-title">C17 CRM — Lead &amp; Deal Management Platform</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Production-ready customer relationship &amp; lead management CRM live in active use at <a href="https://dashboard.c17.ai" target="_blank" style="color:var(--purple-300); text-decoration:underline;">dashboard.c17.ai</a>. Built full-stack with AI-powered lead qualification, automated workflow triggers, customer status tracking, and multi-stage deal pipelines. Securely hosted on a private VPS deployed through a Tailscale server mesh.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">Express</span>
+                                <span class="project-tech-tag">MongoDB</span>
+                                <span class="project-tech-tag">Tailscale Server</span>
+                                <span class="project-tech-tag">AI Workflows</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://dashboard.c17.ai" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="Visit C17 CRM">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="project.html?id=c17-crm" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/c17-dashboard.jpg" alt="C17 CRM Lead Pipeline Dashboard" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Self-Hosted n8n Automation Engine (Odd) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-cogs"></i> Cloud Infrastructure &amp; Automation</p>
+                            <h3 class="project-heading-title">Self-Hosted n8n Workflow Automation Engine</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Enterprise workflow automation platform self-hosted on an Oracle Cloud VPS server. Powers event-driven webhook processing, database synchronizations between MongoDB and external platforms, scheduled cron triggers, and multi-agent AI execution pipelines with zero third-party subscription limits.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">n8n</span>
+                                <span class="project-tech-tag">Oracle Cloud VPS</span>
+                                <span class="project-tech-tag">Docker</span>
+                                <span class="project-tech-tag">Webhooks</span>
+                                <span class="project-tech-tag">AI Agents</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://github.com/HunzilaRajput746" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="GitHub Profile">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project.html?id=n8n-automation" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/workflow.jpg" alt="n8n Workflow Automation Engine" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Smart Helmet Navigation & Crash Detection (Even) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row reversed">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-microchip"></i> Final Year Project · A+ Grade</p>
+                            <h3 class="project-heading-title">Smart Helmet with Navigation &amp; Crash Detection</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Comprehensive IoT safety system integrating GPS navigation, crash detection, and Face-API facial recognition. Achieved 90% overall system accuracy, 95% reliable crash alerts via ESP32/sensors (NEO-6M, MPU6050, DHT11), and a real-time Node.js + Leaflet GPS tracking dashboard.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">ESP32</span>
+                                <span class="project-tech-tag">Arduino</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">Leaflet.js</span>
+                                <span class="project-tech-tag">Face-API</span>
+                                <span class="project-tech-tag">IoT</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://github.com/HunzilaRajput746" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project.html?id=p1" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/helmet.jpg" alt="Smart Helmet IoT Project" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: GourmetOS Restaurant Operations SaaS (Odd) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-utensils"></i> Full-Stack Next.js 14 SaaS</p>
+                            <h3 class="project-heading-title">GourmetOS — Restaurant Operations System</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Full-stack restaurant operations platform featuring role-based authentication (Admin/Staff), interactive Point-of-Sale terminal, live Kitchen Display System (Kanban order flow), menu and inventory control, revenue analytics dashboard, and an AI-assisted menu pricing engine.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">Next.js App Router</span>
+                                <span class="project-tech-tag">MongoDB</span>
+                                <span class="project-tech-tag">Tailwind CSS</span>
+                                <span class="project-tech-tag">NextAuth</span>
+                                <span class="project-tech-tag">AI Assisted</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://github.com/HunzilaRajput746" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project.html?id=gourmet-os" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/orbitwork-employer-dashboard.png" alt="GourmetOS Restaurant Operations System" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Breast Cancer Detection ML (Even) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row reversed">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-dna"></i> Deep Learning &amp; Healthcare AI</p>
+                            <h3 class="project-heading-title">Breast Cancer Detection System (96% Accuracy)</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    End-to-end machine learning and deep learning classification system achieving 96% accuracy. Features full EDA, PCA feature selection, SMOTE class balancing, Random Forest, XGBoost, and custom CNN architectures with FastAPI inference endpoints.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">Python</span>
+                                <span class="project-tech-tag">PyTorch</span>
+                                <span class="project-tech-tag">Scikit-Learn</span>
+                                <span class="project-tech-tag">CNN</span>
+                                <span class="project-tech-tag">FastAPI</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://github.com/HunzilaRajput746" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project.html?id=p2" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/cancer.jpg" alt="Breast Cancer Detection System" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Orbitwork Freelance Marketplace (Odd) -->
+                <div class="project-item-block">
+                    <div class="project-grid-row">
+                        <div class="project-text-content">
+                            <p class="project-badge-tag"><i class="fas fa-briefcase"></i> Full-Stack MERN Marketplace</p>
+                            <h3 class="project-heading-title">Orbitwork — Freelance Marketplace &amp; Job Board</h3>
+                            <div class="project-glass-card">
+                                <p class="project-glass-desc">
+                                    Production-ready marketplace connecting employers with independent talent. Includes role-based dashboards, job publishing, candidate applications, search/filtering, applicant review, and status tracking.
+                                </p>
+                            </div>
+                            <div class="project-tech-tags">
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">Material UI</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">Express</span>
+                                <span class="project-tech-tag">MongoDB</span>
+                                <span class="project-tech-tag">JWT</span>
+                            </div>
+                            <div class="project-links-row">
+                                <a href="https://github.com/HunzilaRajput746/T3-2_Job_Board_Freelance_Marketplace_App" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project.html?id=p10" class="project-icon-link" aria-label="View Project Case Study">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-visual-preview">
+                            <div class="project-visual-inner" title="Click to inspect full screenshot">
+                                <img src="images/projects/orbitwork-candidate-dashboard.png" alt="Orbitwork Candidate Dashboard" class="project-visual-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Working Contact Section with Functional Email Backend -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h2>Contact</h2>
+                    <p class="contact-subtitle">
+                        I'm currently looking to join a cross-functional team that values building impactful AI solutions, or have a project in mind? Let's connect.
+                    </p>
+                    <a href="mailto:hunzilanisar123@gmail.com" class="direct-email-link">hunzilanisar123@gmail.com</a>
+                </div>
+
+                <div class="contact-grid">
+                    
+                    <!-- Direct Info Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Email Directly</h4>
+                                    <p><a href="mailto:hunzilanisar123@gmail.com">hunzilanisar123@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Phone / WhatsApp</h4>
+                                    <p><a href="tel:+923186326746">+92 318 6326746</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Location</h4>
+                                    <p>Lodhran, Punjab, Pakistan</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fab fa-linkedin-in"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://www.linkedin.com/in/hunzila-nisar-ai/" target="_blank">hunzila-nisar-ai</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-handshake"></i></div>
+                                <div class="contact-info-text">
+                                    <h4>Fiverr Services</h4>
+                                    <p><a href="https://www.fiverr.com/huzaifae3742" target="_blank">fiverr.com/huzaifae3742</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 2rem;">
+                            <i class="fas fa-shield-alt"></i> Messages sent via the form are securely delivered directly to Hunzilanisar123@gmail.com.
+                        </p>
+                    </div>
+
+                    <!-- Functional Form Card -->
+                    <div class="contact-form-card">
+                        <form id="portfolioContactForm" data-netlify="true" name="portfolio-contact">
+                            <!-- Status alerts -->
+                            <div class="form-status-alert success" id="formAlertSuccess">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Thank you! Your message has been sent directly to Hunzilanisar123@gmail.com. I will reply shortly!</span>
+                            </div>
+
+                            <div class="form-status-alert error" id="formAlertError">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Oops, could not send automatically. Please email me directly at <a href="mailto:hunzilanisar123@gmail.com" style="text-decoration:underline;">hunzilanisar123@gmail.com</a></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formName" class="form-label">Your Name</label>
+                                <input type="text" id="formName" name="name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formEmail" class="form-label">Your Email</label>
+                                <input type="email" id="formEmail" name="email" class="form-input" placeholder="sarah@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formSubject" class="form-label">Subject</label>
+                                <input type="text" id="formSubject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formMessage" class="form-label">Message</label>
+                                <textarea id="formMessage" name="message" class="form-textarea" placeholder="Tell me about your project, timeline, or requirements..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="contactSubmitBtn">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Lightbox for Fullscreen Screenshots -->
+    <div class="modal-overlay" id="imageModal" aria-hidden="true">
+        <div class="modal-box">
+            <button class="modal-close-btn" id="modalClose" aria-label="Close Preview">&times;</button>
+            <img src="" alt="Project Preview" class="modal-img" id="modalImage">
         </div>
     </div>
 
-
-    <!-- Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">HN</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#certifications" class="nav-link">Certs</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div id="particles-js"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Available for Work · Pakistan
-                </div>
-                <h1 class="hero-title">
-                    <span class="text-line">Hi, I'm</span>
-                    <span class="text-line highlight">HUNZILA NISAR</span>
-                </h1>
-                <div class="typing-container">
-                    <span class="typing-text"></span>
-                    <span class="cursor-blink">|</span>
-                </div>
-                <p class="hero-description">
-                    Building the future with <strong>AI Agents</strong>, <strong>LLMs</strong>, and production-grade ML systems. From autonomous agents to full-stack AI SaaS — I turn complex problems into elegant solutions.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary" id="viewWorkBtn">
-                        <span>View My Work</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary" id="contactBtn">
-                        <span>Get in Touch</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/hunzila-nisar-ai/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/HunzilaRajput746" target="_blank" class="social-icon" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:hunzilanisar123@gmail.com" class="social-icon" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="tel:+923186326746" class="social-icon" aria-label="Phone">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-container">
-                    <div class="hexagon-wrapper">
-                        <svg viewBox="0 0 100 100" class="hexagon-svg">
-                            <defs>
-                                <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
-                                    <stop offset="100%" style="stop-color:#06b6d4"/>
-                                </linearGradient>
-                                <clipPath id="hexagon-clip">
-                                    <polygon points="50 1 95 25 95 75 50 99 5 75 5 25"/>
-                                </clipPath>
-                            </defs>
-                            <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" class="hexagon-border"/>
-                        </svg>
-                        <div class="profile-pic">
-                            <img class="avatar-placeholder1" src="portfolio.jpg" alt="Hunzila Nisar">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"><div class="wheel"></div></div>
-            <p>Scroll Down</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Site Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">01.</span>
-                <h2 class="section-title">About Me</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text reveal">
-                    <p class="lead-text">
-                        I'm a passionate <span class="highlight">AI Engineer</span> and <span class="highlight">Agentic AI Developer</span> from Lodhran, Pakistan, with a Bachelor's degree in Artificial Intelligence from The Islamia University of Bahawalpur.
-                    </p>
-                    <p>
-                        My journey combines cutting-edge machine learning, computer vision, autonomous AI agents, and full-stack web development. I specialize in building end-to-end AI systems — from LLM-powered agents to production-ready ML pipelines with REST APIs and real-time dashboards.
-                    </p>
-                    <p>
-                        From cancer detection systems to IoT smart helmets with crash detection and AI-powered SaaS platforms, I thrive on turning complex AI problems into elegant, working solutions.
-                    </p>
-                    <p>
-                        What drives me is the intersection of <strong>Agentic AI</strong> and practical applications — building systems that not only work autonomously but make a real-world difference. Python, PyTorch, TensorFlow, FastAPI, Next.js, LangChain, and Groq AI are my tools of choice.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h4>Education</h4>
-                                <p>BSc in Artificial Intelligence</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Lodhran, Pakistan</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-robot"></i>
-                            <div>
-                                <h4>Specialty</h4>
-                                <p>Agentic AI & LLM Systems</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-trophy"></i>
-                            <div>
-                                <h4>Achievement</h4>
-                                <p>3rd Position — Annual Expo 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-stats reveal">
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
-                        <div>
-                            <h3 class="stat-number" data-target="19">0</h3>
-                            <p class="stat-label">Projects Completed</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-award"></i></div>
-                        <div>
-                            <h3 class="stat-number" data-target="8">0</h3>
-                            <p class="stat-label">Certifications</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h3 class="stat-number" data-target="96">0</h3>
-                            <p class="stat-label">Max Accuracy Achieved</p>
-                        </div>
-                        <span class="stat-suffix">%</span>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-robot"></i></div>
-                        <div>
-                            <h3 class="stat-number" data-target="5">0</h3>
-                            <p class="stat-label">AI Agents Built</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">02.</span>
-                <h2 class="section-title">Technical Arsenal</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="skills-content">
-
-                <!-- Agentic AI — FEATURED TOP -->
-                <div class="skill-category agentic-category reveal">
-                    <div class="category-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>Agentic AI & LLM Systems</h3>
-                        <span class="agentic-badge">⚡ Core Specialty</span>
-                    </div>
-                    <div class="agentic-grid">
-                        <div class="agentic-tag"><i class="fas fa-brain"></i> LLM Integration</div>
-                        <div class="agentic-tag"><i class="fas fa-robot"></i> AI Agents</div>
-                        <div class="agentic-tag"><i class="fas fa-cogs"></i> n8n Automation</div>
-                        <div class="agentic-tag"><i class="fas fa-link"></i> LangChain</div>
-                        <div class="agentic-tag"><i class="fas fa-bolt"></i> Groq API</div>
-                        <div class="agentic-tag"><i class="fas fa-comments"></i> OpenAI API</div>
-                        <div class="agentic-tag"><i class="fas fa-gem"></i> Gemini AI</div>
-                        <div class="agentic-tag"><i class="fas fa-database"></i> RAG Systems</div>
-                        <div class="agentic-tag"><i class="fas fa-microphone"></i> Prompt Engineering</div>
-                        <div class="agentic-tag"><i class="fas fa-network-wired"></i> Multi-Agent Systems</div>
-                        <div class="agentic-tag"><i class="fas fa-edit"></i> AI Content Gen</div>
-                        <div class="agentic-tag"><i class="fas fa-tasks"></i> Workflow Automation</div>
-                    </div>
-                </div>
-
-                <!-- AI/ML Skills -->
-                <div class="skill-category reveal">
-                    <div class="category-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI & Machine Learning</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-python"></i></div>
-                            <div class="skill-info">
-                                <h4>Python</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-fire"></i></div>
-                            <div class="skill-info">
-                                <h4>PyTorch</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-                            <div class="skill-info">
-                                <h4>TensorFlow</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
-                                <span class="skill-percent">88%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-eye"></i></div>
-                            <div class="skill-info">
-                                <h4>OpenCV</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="skill-info">
-                                <h4>Scikit-learn</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-table"></i></div>
-                            <div class="skill-info">
-                                <h4>Pandas & NumPy</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="93"></div></div>
-                                <span class="skill-percent">93%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Full-Stack Skills -->
-                <div class="skill-category reveal">
-                    <div class="category-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Full-Stack Development</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-react"></i></div>
-                            <div class="skill-info">
-                                <h4>React.js / Next.js</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-node"></i></div>
-                            <div class="skill-info">
-                                <h4>Node.js</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
-                                <span class="skill-percent">88%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-server"></i></div>
-                            <div class="skill-info">
-                                <h4>FastAPI / Express</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-database"></i></div>
-                            <div class="skill-info">
-                                <h4>MongoDB</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
-                                <span class="skill-percent">82%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
-                            <div class="skill-info">
-                                <h4>JavaScript / TypeScript</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="87"></div></div>
-                                <span class="skill-percent">87%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-plug"></i></div>
-                            <div class="skill-info">
-                                <h4>REST APIs</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IoT / Tools -->
-                <div class="skill-category reveal">
-                    <div class="category-header">
-                        <i class="fas fa-microchip"></i>
-                        <h3>IoT & Tools</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-satellite-dish"></i></div>
-                            <div class="skill-info">
-                                <h4>Arduino / ESP32</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                            <div class="skill-info">
-                                <h4>Git / GitHub</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-terminal"></i></div>
-                            <div class="skill-info">
-                                <h4>Selenium / BeautifulSoup</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                            <div class="skill-info">
-                                <h4>Vercel / Railway / Render</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
-                                <span class="skill-percent">82%</span>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-cogs"></i></div>
-                            <div class="skill-info">
-                                <h4>Loop Engineering</h4>
-                                <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
-                                <span class="skill-percent">78%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">03.</span>
-                <h2 class="section-title">Experience</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="timeline">
-                <!-- AI Internship — Japan Town Bahawalpur -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"><i class="fas fa-brain"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 · 3 Months</div>
-                        <h3>Artificial Intelligence Internship</h3>
-                        <h4>Japan Town, Bahawalpur</h4>
-                        <p class="timeline-description">
-                            Completed a 3-month hands-on AI internship, working on real-world AI projects including machine learning model development, data preprocessing pipelines, and intelligent system design under industry mentors.
-                        </p>
-                        <ul class="timeline-achievements">
-                            <li><i class="fas fa-check-circle"></i> Developed and deployed ML models for practical classification and prediction tasks</li>
-                            <li><i class="fas fa-check-circle"></i> Gained industry experience in AI project lifecycle — from data collection to deployment</li>
-                            <li><i class="fas fa-check-circle"></i> Collaborated with senior AI engineers on real client-facing AI solutions</li>
-                            <li><i class="fas fa-check-circle"></i> Applied deep learning techniques to solve domain-specific challenges</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="tag">Artificial Intelligence</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Deep Learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ML & AI Training — BuiltIn Software House -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"><i class="fas fa-robot"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024</div>
-                        <h3>Machine Learning & AI Training</h3>
-                        <h4>BuiltIn Software House (NAVTTC Affiliated)</h4>
-                        <p class="timeline-description">
-                            Completed intensive 3-month training in Machine Learning and Artificial Intelligence, gaining practical experience in ML algorithms, deep learning, and real-world applications.
-                        </p>
-                        <ul class="timeline-achievements">
-                            <li><i class="fas fa-check-circle"></i> Mastered fundamental and advanced ML algorithms including supervised and unsupervised learning</li>
-                            <li><i class="fas fa-check-circle"></i> Developed proficiency in TensorFlow, PyTorch, and neural network architectures</li>
-                            <li><i class="fas fa-check-circle"></i> Implemented real-world ML projects in classification, regression, and computer vision</li>
-                            <li><i class="fas fa-check-circle"></i> Gained expertise in data preprocessing, feature engineering, and model evaluation</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Deep Learning</span>
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">NAVTTC</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Robotics Internship — AICademy -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"><i class="fas fa-cogs"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 · 3 Months</div>
-                        <h3>Robotics Internship</h3>
-                        <h4>AICademy</h4>
-                        <p class="timeline-description">
-                            Completed a dedicated 3-month robotics internship at AICademy, gaining hands-on experience in robotics fundamentals, Arduino-based hardware programming, sensor integration, and building autonomous robotic systems.
-                        </p>
-                        <ul class="timeline-achievements">
-                            <li><i class="fas fa-check-circle"></i> Designed and built functional robotic prototypes using Arduino and ESP32 microcontrollers</li>
-                            <li><i class="fas fa-check-circle"></i> Integrated multiple sensors (ultrasonic, IR, servo motors) into autonomous systems</li>
-                            <li><i class="fas fa-check-circle"></i> Learned circuit design, PCB fundamentals, and embedded C programming</li>
-                            <li><i class="fas fa-check-circle"></i> Built a line-following robot and object-detection bot as capstone projects</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="tag">Robotics</span>
-                            <span class="tag">Arduino</span>
-                            <span class="tag">ESP32</span>
-                            <span class="tag">Embedded C</span>
-                            <span class="tag">Sensors</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="projects-grid">
-
-                <!-- Project 1: Orbitwork Marketplace — Featured -->
-                <div class="project-card featured reveal" data-project-id="p10">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746/T3-2_Job_Board_Freelance_Marketplace_App" target="_blank" class="project-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/orbitwork-employer-dashboard.png" alt="Orbitwork job board employer dashboard" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-label">Full-Stack MERN</div>
-                        <h3>Orbitwork — Job Board &amp; Freelance Marketplace</h3>
-                        <p class="project-description">
-                            Production-ready marketplace connecting employers with independent talent. Includes secure authentication, role-based dashboards, job publishing, candidate applications, search and filtering, applicant review, and application status tracking.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span><span>Material UI</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>bcryptjs</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat"><i class="fas fa-briefcase"></i><span>Employer Dashboard</span></div>
-                            <div class="stat"><i class="fas fa-user-check"></i><span>Candidate Workflow</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 1: Smart Helmet — Featured -->
-                <div class="project-card featured reveal" data-project-id="p1">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/helmet.jpg" alt="Smart Helmet IoT Project" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-label">Featured Project</div>
-                        <h3>Smart Helmet with Navigation System</h3>
-                        <p class="project-description">
-                            Comprehensive IoT-based safety system integrating GPS navigation, crash detection, and facial recognition. Features real-time tracking dashboard, environmental monitoring with multiple sensors (GPS NEO-6M, Ultrasonic HC-SR04, MPU6050, DHT11), and automated emergency alerts with 95% reliability.
-                        </p>
-                        <div class="project-tech">
-                            <span>Arduino</span><span>ESP32</span><span>Node.js</span><span>Express</span><span>Leaflet</span><span>Face-API</span><span>IoT</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat"><i class="fas fa-check-circle"></i><span>90% Accuracy</span></div>
-                            <div class="stat"><i class="fas fa-trophy"></i><span>A+ Grade</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Cancer Detection -->
-                <div class="project-card reveal" data-project-id="p2">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/cancer.jpg" alt="Breast Cancer Detection" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <h3>Breast Cancer Detection System</h3>
-                        <p class="project-description">
-                            End-to-end machine learning pipeline for breast cancer detection. Performed comprehensive EDA, feature engineering, and class balancing. Trained Random Forest, XGBoost, and CNN classifiers with hyperparameter optimization achieving 96% accuracy.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Scikit-learn</span><span>TensorFlow</span><span>XGBoost</span><span>CNN</span><span>Pandas</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat"><i class="fas fa-percentage"></i><span>96% Accuracy</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Depression Screening -->
-                <div class="project-card reveal" data-project-id="p3">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/depression.jpg" alt="Depression Screening CV" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <h3>Video-based Depression Screening</h3>
-                        <p class="project-description">
-                            Advanced computer vision system for mental health screening. Built end-to-end pipeline extracting facial and audio features from user videos. Implemented feature-level fusion with CNN/LSTM and SVM classifiers using OpenCV facial landmarks and audio analysis.
-                        </p>
-                        <div class="project-tech">
-                            <span>OpenCV</span><span>Python</span><span>CNN</span><span>LSTM</span><span>SVM</span><span>dlib</span><span>Audio Processing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Google Maps Scraper — Featured (Vibe Coded) -->
-                <div class="project-card featured reveal" data-project-id="p4">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/maps-scraper.jpg" alt="Google Maps Lead Scraper" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-label vibe-label">⚡ Vibe Coded · 2025</div>
-                        <h3>Google Maps Lead Scraper</h3>
-                        <p class="project-description">
-                            End-to-end lead generation scraper targeting Google Maps. Extracts business emails, phone numbers, and metadata with no listing cap — scrapes till the last result. Supports multi-city input (semicolon-separated), combined Excel export with city-by-city breakdown, and MD5-based duplicate detection across cells and sessions. Achieves ~200 listings per cell with 10-scroll depth per search grid.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Selenium</span><span>BeautifulSoup</span><span>Pandas</span><span>OpenPyXL</span><span>MD5 Hashing</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat"><i class="fas fa-map-marker-alt"></i><span>Multi-City Support</span></div>
-                            <div class="stat"><i class="fas fa-shield-alt"></i><span>Dupe Detection</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 10: HealthSaaS — Featured -->
-                <div class="project-card featured reveal" data-project-id="p7">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/health-saas.jpg" alt="HealthSaaS Clinic Management" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-label vibe-label">⚡ Vibe Coded · 2025</div>
-                        <h3>HealthSaaS — AI Clinic Management System</h3>
-                        <p class="project-description">
-                            Full-stack AI-powered clinic management SaaS with a smart chatbot receptionist handling appointment booking, doctor scheduling, and lab test queries 24/7. REST backend with FastAPI and MongoDB; integrated Groq AI for conversational responses and Twilio for WhatsApp booking confirmations. Real-time admin dashboard (Next.js) with date-wise booking history, revenue stats, and secure login.
-                        </p>
-                        <div class="project-tech">
-                            <span>FastAPI</span><span>MongoDB</span><span>Next.js</span><span>Groq AI</span><span>Twilio</span><span>Railway</span><span>Vercel</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat"><i class="fas fa-hospital"></i><span>Full SaaS Product</span></div>
-                            <div class="stat"><i class="fab fa-whatsapp"></i><span>WhatsApp Booking</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Wanderlust -->
-                <div class="project-card reveal" data-project-id="p8">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/travel.jpg" alt="Wanderlust Travel Platform" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <h3>Wanderlust — Travel Platform</h3>
-                        <p class="project-description">
-                            Full-stack MERN travel listing platform with complete authentication using Passport and JWT. Features responsive Bootstrap UI, secure image uploads via Multer and Cloudinary, comprehensive CRUD operations, and advanced search/filter functionality. Deployed on Vercel with MongoDB Atlas.
-                        </p>
-                        <div class="project-tech">
-                            <span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span><span>JWT</span><span>Cloudinary</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: IPL Dashboard -->
-                <div class="project-card reveal" data-project-id="p9">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/HunzilaRajput746" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <img src="images/projects/analytics.jpg" alt="IPL Analytics Dashboard" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <h3>IPL Analytics Dashboard</h3>
-                        <p class="project-description">
-                            Comprehensive EDA on IPL match and player datasets using Pandas and Plotly. Extracted actionable insights including top scorers, strike rates, venue patterns, and team performance metrics to support stakeholder decisions in scouting and strategic analysis.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Pandas</span><span>Plotly</span><span>Data Analysis</span><span>Visualization</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">05.</span>
-                <h2 class="section-title">Education</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="education-timeline">
-                <div class="edu-item reveal">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-content">
-                        <div class="edu-date">2021 – 2025</div>
-                        <h3>Bachelor of Science in Artificial Intelligence</h3>
-                        <h4>The Islamia University of Bahawalpur</h4>
-                        <p class="edu-description">
-                            Specialized in Artificial Intelligence, Machine Learning, Deep Learning, Internet of Things (IoT), and web-based system development. Comprehensive understanding of AI algorithms, neural networks, computer vision, and practical implementation of ML systems.
-                        </p>
-                        <div class="edu-highlights">
-                            <div class="highlight"><i class="fas fa-star"></i><span>Focus: AI/ML, Deep Learning, IoT</span></div>
-                            <div class="highlight"><i class="fas fa-trophy"></i><span>Final Year Project: A+ Grade</span></div>
-                            <div class="highlight"><i class="fas fa-award"></i><span>3rd Position — Annual Expo 2022</span></div>
-                        </div>
-                        <div class="edu-courses">
-                            <span class="course">Machine Learning</span><span class="course">Deep Learning</span>
-                            <span class="course">Computer Vision</span><span class="course">NLP</span>
-                            <span class="course">IoT Systems</span><span class="course">Data Science</span>
-                            <span class="course">Web Development</span><span class="course">Algorithm Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edu-item reveal">
-                    <div class="edu-icon"><i class="fas fa-school"></i></div>
-                    <div class="edu-content">
-                        <div class="edu-date">2019 – 2021</div>
-                        <h3>Intermediate (FSc Pre-Engineering)</h3>
-                        <h4>Govt Higher Secondary School Lodhran</h4>
-                        <p class="edu-description">
-                            Completed intermediate education with focus on Programming, Hardware fundamentals, and Database Management Systems. Strong foundation in mathematics, physics, and computer science that paved the way for advanced AI studies.
-                        </p>
-                        <div class="edu-highlights">
-                            <div class="highlight"><i class="fas fa-book"></i><span>Subjects: Programming, Hardware, DBMS</span></div>
-                            <div class="highlight"><i class="fas fa-certificate"></i><span>Strong Academic Performance</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">06.</span>
-                <h2 class="section-title">Certifications & Achievements</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="cert-grid">
-                <!-- AICademy Robotics Certificate — with image placeholder -->
-                <div class="cert-card cert-card--image reveal">
-                    <div class="cert-image-placeholder">
-                        <img src="images/certs/aicademy-robotics.jpg" alt="AICademy Robotics Certificate"
-                             onerror="this.parentElement.innerHTML='<div class=cert-img-fallback><i class=fas fa-cogs></i><span>Place your certificate image at<br><code>images/certs/aicademy-robotics.jpg</code></span></div>'">
-                    </div>
-                    <div class="cert-info">
-                        <h4>Robotics Internship Certificate (3 Months)</h4>
-                        <p>AICademy</p>
-                        <span class="cert-date">2022</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beyond The Code Section -->
-    <section id="passions" class="passions-section">
-        <div class="container">
-            <div class="section-header reveal" style="text-align: center;">
-                <h2 class="section-title" style="text-transform: none;">Beyond The Code</h2>
-                <div class="title-line" style="margin: 0 auto 30px;"></div>
-            </div>
-            <p class="passions-subtitle reveal">When I'm not building AI systems or coding web applications, you'll find me pursuing these passions:</p>
-            
-            <div class="passions-grid">
-                <!-- Passion 1 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-plane-departure"></i>
-                    </div>
-                    <h3>Exploring New Places</h3>
-                    <p>Traveling to discover new cultures, landscapes, and perspectives that inspire creativity and innovation in my work.</p>
-                </div>
-                <!-- Passion 2 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Coding Personal Projects</h3>
-                    <p>Experimenting with new technologies, frameworks, and building side projects to continuously expand my skill set.</p>
-                </div>
-                <!-- Passion 3 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Music</h3>
-                    <p>Enjoying diverse music genres that help me relax, focus, and find inspiration during creative problem-solving.</p>
-                </div>
-                <!-- Passion 4 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-futbol"></i>
-                    </div>
-                    <h3>Sports</h3>
-                    <p>Staying active through various sports activities, maintaining physical fitness and a competitive spirit.</p>
-                </div>
-                <!-- Passion 5 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Books Reading</h3>
-                    <p>Reading technical books, sci-fi novels, and industry publications to stay updated and broaden knowledge horizons.</p>
-                </div>
-                <!-- Passion 6 -->
-                <div class="passion-card reveal">
-                    <div class="passion-icon-wrapper">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Learning New Tech</h3>
-                    <p>Constantly exploring emerging technologies in AI, web development, and IoT to stay ahead of industry trends.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hire Me on Fiverr Section -->
-    <section id="fiverr" class="fiverr-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">07.</span>
-                <h2 class="section-title">Hire Me on Fiverr</h2>
-                <div class="title-line"></div>
-            </div>
-            <p class="fiverr-subtitle reveal">Need a project built? Order directly through my Fiverr gigs &mdash; fast response, clear scope, and production-ready delivery.</p>
-            <div class="fiverr-grid">
-                <a href="https://www.fiverr.com/huzaifae3742/custom-ai-saas-mvp-web-application-rapidly-using-vibe-coding" target="_blank" rel="noopener" class="fiverr-card reveal">
-                    <div class="fiverr-card-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>AI SaaS MVP Development</h3>
-                    <p>Launch your AI-powered SaaS or MVP in days with vibe coding, custom AI integrations, and API development.</p>
-                    <span class="fiverr-card-cta">View Gig <i class="fas fa-arrow-right"></i></span>
+            <div class="footer-social-row">
+                <a href="https://www.linkedin.com/in/hunzila-nisar-ai/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.fiverr.com/huzaifae3742/build-an-ai-saas-mvp-chatbot-or-custom-web-app-with-mern" target="_blank" rel="noopener" class="fiverr-card reveal">
-                    <div class="fiverr-card-icon"><i class="fas fa-layer-group"></i></div>
-                    <h3>Custom MERN Web Apps</h3>
-                    <p>Production-grade MERN stack web applications with AI features &mdash; dashboards, SaaS platforms, and portals.</p>
-                    <span class="fiverr-card-cta">View Gig <i class="fas fa-arrow-right"></i></span>
+                <a href="https://github.com/HunzilaRajput746" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:hunzilanisar123@gmail.com" class="social-circle-btn" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.fiverr.com/huzaifae3742" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Fiverr">
+                    <i class="fas fa-handshake"></i>
                 </a>
             </div>
-            <p class="fiverr-note reveal"><i class="fas fa-info-circle"></i> Note: my Fiverr seller account <strong>huzaifae3742</strong> is registered in my brother Huzaifa Nisar's name &mdash; all work is done by me, Hunzila Nisar.</p>
-        </div>
-    </section>
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-number">08.</span>
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-intro reveal">
-                    <h3>Let's Build Something with AI</h3>
-                    <p>
-                        I'm currently open to exciting AI projects, collaborations, and new opportunities. Whether you need an AI agent, LLM integration, ML pipeline, or a full-stack AI SaaS — let's talk!
-                    </p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:hunzilanisar123@gmail.com">hunzilanisar123@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+923186326746">+92 318 6326746</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <a href="#">Lodhran, Punjab, Pakistan</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/hunzila-nisar-ai/" target="_blank">linkedin.com/in/hunzila-nisar-ai</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/HunzilaRajput746" target="_blank">github.com/HunzilaRajput746</a>
-                        <div class="contact-item">
-                            <i class="fas fa-handshake"></i>
-                            <a href="https://www.fiverr.com/huzaifae3742" target="_blank">fiverr.com/huzaifae3742</a>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form reveal">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="AI Project Collaboration">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" required placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">&lt;HN /&gt;</div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/hunzila-nisar-ai/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/HunzilaRajput746" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:hunzilanisar123@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p class="footer-text">
-                Designed & Built with <span class="heart">Passion</span> by <strong>Hunzila Nisar</strong> — AI Engineer & Agentic AI Developer
+            <p class="footer-copyright">
+                &copy; 2026 Hunzila Nisar. All rights reserved. Built with modern AI &amp; accessible engineering.
             </p>
-            <p class="footer-text" style="font-size:0.8rem; color: var(--text-muted);">© 2025 Hunzila Nisar. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
